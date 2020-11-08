@@ -36,19 +36,20 @@ For Review use purpose:
 
 ## Step 1
 - Build out the server in index.js
-- Create any other necessary folders and files for your server (HINT: controller, router) and use the Routes Guide to add the necessary routes
+- Create any other necessary folders and files for your server (HINT: controller, router) and use the Routes Guide to add the necessary routes - done
+
 
 ## Step 2
 - Build out the NoSQL database
 - Create a properly formatted schema and use it to set up a new collection in your database
-- Make sure there is a connection to the server
+- Make sure there is a connection to the server - done
 
 ## Step 3
-- Test all endpoints via [Postman](https://www.postman.com/downloads/) (HINT: test POST first)
+- Test all endpoints via [Postman](https://www.postman.com/downloads/) (HINT: test POST first) - done
 
 ## Step 4
 - Build out the noted functions in your front end
-- Refer to Routes Guide if you are lost
+- Refer to Routes Guide if you are lost - done
 
 ## Step 5
 - Use conditional rendering to display a randomly selected restaurant upon pressing the "Go!" button
@@ -57,3 +58,20 @@ For Review use purpose:
 - Add a new feature that lets you add friends
 - Add dropdown to show which friend is submitting each restaurant and save in database
 - HINT: this may require you to build new schemas and/or modify existing schemas
+
+{this.state.data.map((item) => {
+                            if (this.state.isRandom) {
+                                return (
+                                    <div>
+                                        {this.state.theRandomChoice}
+                                    </div>
+                                )
+                            } else {
+                                return (
+                                <div key={item._id} className="individual_container">
+                                    {item.restaurantName}
+                                    <button id={item._id} onClick={this.handleDeleteOne} className="cross_button">x</button>
+                                </div>
+                                )
+                            }
+                        })}
